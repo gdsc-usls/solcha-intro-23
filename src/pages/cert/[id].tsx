@@ -153,7 +153,7 @@ export default function Cert() {
                 </h2>
               </div>
             </Tilt>
-            <div className="flex items-center mt-8 space-x-4">
+            <div className="flex items-center mt-8 space-x-2 sm:space-x-4">
               {imgLoading ? (
                 <Icons.spinner className="w-6 h-6" />
               ) : (
@@ -164,7 +164,7 @@ export default function Cert() {
 
                   <Button
                     type="button"
-                    className="bg-blue-500 text-white"
+                    className="bg-blue-500 text-white text-xs sm:text-base"
                     disabled={imgLoading}
                     onClick={saveImage}
                   >
@@ -173,7 +173,7 @@ export default function Cert() {
 
                   <Button
                     type="submit"
-                    className="bg-blue-500 text-white"
+                    className="bg-blue-500 text-white text-xs sm:text-base whitespace-nowrap"
                     disabled={imgLoading}
                   >
                     Send to Email
