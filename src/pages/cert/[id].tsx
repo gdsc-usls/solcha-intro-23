@@ -27,7 +27,7 @@ export default function Cert() {
     query: { id },
   } = useRouter();
   const [value, loading] = useDocumentOnce(
-    doc(db, `certificates/devfest23/for/${id}`)
+    doc(db, `certificates/dev-test/for/${id}`)
   );
   const data = { ...value?.data(), id: value?.id } as Attendee;
 
