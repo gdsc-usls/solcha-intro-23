@@ -142,7 +142,7 @@ export default function Cert() {
                 />
 
                 <h2
-                  className={`absolute z-10 sm:mt-12 mt-8 text-[#171717] [font-size:clamp(16px,3vw,36px)] uppercase ${googleBold.className}`}
+                  className={`absolute z-10  sm:mt-11 lg:mt-10 mt-7 text-[#171717] [font-size:clamp(16px,3vw,36px)] uppercase ${googleBold.className}`}
                 >
                   {data.firstName} {data.lastName}
                 </h2>
