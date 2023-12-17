@@ -53,18 +53,19 @@ export default function Home() {
   };
 
   return (
-    <section className="min-h-screen py-10 lg:py-20 relative font-google-reg pb-40">
-      <div className="glassmorph min-h-fit z-30 relative w-[90%] px-7 md:w-3/4 lg:w-2/3 mx-auto">
-        <div className="gap-5 flex flex-col items-center pt-28 pb-56">
+    <section className="min-h-screen py-10 lg:py-20 relative font-google-reg">
+      <div className="glassmorph min-h-[80vh] z-30 relative w-[90%] px-7 md:w-3/4 lg:w-2/3 mx-auto">
+        <div className="gap-5 flex flex-col items-center py-28">
           <Image
             src="/images/main-logo.svg"
             width={300}
             height={200}
             alt="3D SDGs"
             priority
+            className="scale-[0.6] md:scale-75 xl:scale-100"
           />
 
-          <p className="text-center text-2xl mt-4 mb-14">
+          <p className="text-center text-lg xl:text-2xl md:text-xl xl:mt-4 mb-14">
             An Introduction to Google Solutions Challenge
           </p>
           <form
@@ -83,7 +84,7 @@ export default function Home() {
               disabled={loading}
               className={`cursor-pointer transition-all bg-blue-500 text-white px-6 py-2 rounded-lg border-blue-600 border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px] active:border-b-[2px] active:brightness-90 active:translate-y-[2px] w-full disabled:cursor-not-allowed ${googleMedium.className}`}
             >
-              Claim
+              Claim Certificate
             </Button>
           </form>
         </div>

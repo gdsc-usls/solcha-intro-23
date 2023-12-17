@@ -24,11 +24,11 @@ export default function Layout({
 
       <Image
         src="/images/stack1.png"
-        width={440}
+        width={500}
         height={860}
         alt="3D SDGs"
         priority
-        className="pointer-events-none absolute top-0 -left-28 z-10 object-cover hidden lg:block"
+        className="pointer-events-none absolute top-0 -left-20 z-10 object-cover hidden lg:block"
       />
 
       <Image
