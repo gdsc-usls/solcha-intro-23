@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
-import Image from "next/image";
-// import bg from "@/images/bg.jpg";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 
 export default function Layout({
   className,
@@ -14,7 +12,7 @@ export default function Layout({
     <main className={`bg-white mx-auto font-google-reg ${className}`}>
       {children}
 
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 }
