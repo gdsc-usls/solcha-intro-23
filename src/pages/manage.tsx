@@ -59,7 +59,7 @@ export default function Manage() {
     try {
       parsedAttendees.forEach(async (attendee) => {
         try {
-          await setDoc(doc(db, "certificates/dev-test/for", nanoid(10)), {
+          await setDoc(doc(db, "certificates/solcha23/for", nanoid(10)), {
             firstName: attendee.firstName,
             lastName: attendee.lastName,
             email: attendee.email,

@@ -30,23 +30,25 @@ export const CertificateEmail = ({ id, firstName, lastName }: Props) => {
         <Body className="bg-white my-auto mx-auto font-sans">
           <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] w-[465px]">
             <Heading className="text-black text-[24px] font-normal text-center p-0 my-[30px] mx-0">
-              <strong>GDG Bacolod</strong>
+              <strong>CTRL + Solve</strong>
             </Heading>
             <Text>
               Hello {firstName} {lastName},
             </Text>
             <Text className="text-black text-[14px] leading-[24px]">
               We&apos;re excited to let you know that your certificate for{" "}
-              <strong>Google DevFest 2023</strong> is ready and waiting for you.
-              🎉 To claim it, just click the button below or check out the
-              attached image:
+              <strong>
+                Ctrl + Solve: An Introduction to Google Solution Challenge
+              </strong>{" "}
+              is ready and waiting for you. 🎉 To claim it, just click the
+              button below or check out the attached image:
             </Text>
             <Section className="text-center mt-[32px] mb-[32px]">
               <Button
                 pX={20}
                 pY={12}
                 className="bg-blue-600 rounded text-white text-[12px] font-semibold no-underline text-center"
-                href={`https://dev-test.omsimos.com/cert/${id}`}
+                href={`https://solcha-intro.omsimos.com/cert/${id}`}
               >
                 Claim Certificate
               </Button>

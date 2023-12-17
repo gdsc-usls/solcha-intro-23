@@ -40,7 +40,7 @@ export default function Home() {
     const code = nanoid(10);
 
     try {
-      await setDoc(doc(db, "certificates/dev-test/for", code), {
+      await setDoc(doc(db, "certificates/solcha23/for", code), {
         firstName,
         lastName,
         email,
