@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import { toast } from "sonner";
+import Image from "next/image";
 
 import { db } from "@/config/firebase";
 
@@ -53,8 +54,19 @@ export default function Home() {
 
   return (
     <section className="min-h-screen py-10 lg:py-20 relative font-google-reg pb-40">
-      <div className="glassmorph min-h-fit z-30 relative w-[90%] px-7 md:w-3/4 mx-auto">
+      <div className="glassmorph min-h-fit z-30 relative w-[90%] px-7 md:w-3/4 lg:w-2/3 mx-auto">
         <div className="gap-5 flex flex-col items-center pt-28 pb-56">
+          <Image
+            src="/images/main-logo.svg"
+            width={300}
+            height={200}
+            alt="3D SDGs"
+            priority
+          />
+
+          <p className="text-center text-2xl mt-4 mb-14">
+            An Introduction to Google Solutions Challenge
+          </p>
           <form
             onSubmit={handleLocate}
             className="flex flex-col gap-2 mt-8 w-full sm:max-w-[400px] max-w-[350px] text-black"
