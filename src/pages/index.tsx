@@ -54,6 +54,24 @@ export default function Home() {
 
   return (
     <section className="min-h-screen py-10 lg:py-20 relative font-google-reg">
+      <Image
+        src="/images/stack1.png"
+        width={500}
+        height={860}
+        alt="3D SDGs"
+        priority
+        className="pointer-events-none absolute top-0 -left-20 z-10 object-cover hidden lg:block"
+      />
+
+      <Image
+        src="/images/stack2.png"
+        width={740}
+        height={1160}
+        alt="3D SDGs"
+        priority
+        className="pointer-events-none absolute bottom-0 right-0 z-10 object-cover"
+      />
+
       <div className="glassmorph min-h-[80vh] z-30 relative w-[90%] px-7 md:w-3/4 lg:w-2/3 mx-auto">
         <div className="gap-5 flex flex-col items-center py-28">
           <Image
