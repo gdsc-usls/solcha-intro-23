@@ -48,7 +48,7 @@ export const CertificateEmail = ({ id, firstName, lastName }: Props) => {
                 pX={20}
                 pY={12}
                 className="bg-blue-600 rounded text-white text-[12px] font-semibold no-underline text-center"
-                href={`https://solcha-intro.omsimos.com/cert/${id}`}
+                href={`https://solcha23.omsimos.com/cert/${id}`}
               >
                 Claim Certificate
               </Button>

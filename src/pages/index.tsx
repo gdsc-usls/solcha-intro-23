@@ -107,29 +107,6 @@ export default function Home() {
             </Button>
           </form>
         </div>
-        <div className="text-center absolute bottom-7 left-0 right-0">
-          <p className="text-center text-base  bg-white/70 border border-white rounded-xl p-4 inline-block">
-            Follow us on GitHub! <br />
-            <a
-              href="https://github.com/hyamero"
-              className="text-blue-600"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @hyamero{" "}
-            </a>
-            —
-            <a
-              href="https://github.com/joshxfi"
-              className="text-blue-600"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {" "}
-              @joshxfi
-            </a>
-          </p>
-        </div>
       </div>
     </section>
   );

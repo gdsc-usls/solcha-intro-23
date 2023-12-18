@@ -1,28 +1,37 @@
 export default function Footer() {
   return (
-    <footer className="absolute bottom-0 z-50 flex justify-center w-full pb-3">
-      <p className="bg-white rounded-full py-2 px-5 text-sm shadow-lg font-google-reg">
-        Powered by
+    <footer className="absolute bottom-0 z-50 flex -translate-x-1/2 left-1/2">
+      <div className="text-center bg-white/70 border border-white rounded-xl py-4 px-6">
+        <p className="text-sm font-google-reg">
+          Powered by{" "}
+          <a
+            href="https://omsimos.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold"
+          >
+            OMSIMOS.COM
+          </a>
+        </p>
         <a
-          href="https://omsimos.com"
+          href="https://github.com/hyamero"
+          className="text-blue-600"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-bold"
+        >
+          @hyamero{" "}
+        </a>
+        —
+        <a
+          href="https://github.com/joshxfi"
+          className="text-blue-600"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {" "}
-          OMSIMOS
+          @joshxfi
         </a>
-        © Creatives 2023 —{" "}
-        <a
-          href="https://omsimos.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-bold"
-        >
-          OMSIMOS
-        </a>
-        .COM
-      </p>
+      </div>
     </footer>
   );
 }
