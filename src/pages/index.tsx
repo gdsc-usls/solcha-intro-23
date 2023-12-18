@@ -84,8 +84,9 @@ export default function Home() {
           />
 
           <p className="text-center text-lg xl:text-2xl md:text-xl xl:mt-4 mb-14">
-            An Introduction to Google Solutions Challenge
+            An Introduction to Google Solutions Challenge.
           </p>
+
           <form
             onSubmit={handleLocate}
             className="flex flex-col gap-2 mt-8 w-full sm:max-w-[400px] max-w-[350px] text-black"
@@ -106,6 +107,27 @@ export default function Home() {
             </Button>
           </form>
         </div>
+        <p className="text-center text-base absolute bottom-10 left-0 right-0">
+          Follow us on GitHub! <br />
+          <a
+            href="https://github.com/hyamero"
+            className="text-blue-600"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @hyamero{" "}
+          </a>
+          —
+          <a
+            href="https://github.com/joshxfi"
+            className="text-blue-600"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            @joshxfi
+          </a>
+        </p>
       </div>
     </section>
   );
