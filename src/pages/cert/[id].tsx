@@ -39,26 +39,28 @@ export default function Cert() {
       return;
     }
 
-    toast.message("Saving Image...");
     setImgLoading(true);
 
-    toPng(cardRef.current, {
-      skipAutoScale: true,
-      cacheBust: true,
-      pixelRatio: 3,
-    })
-      .then((dataUrl) => {
-        const link = document.createElement("a");
-        link.download = `certificate_${value?.id}.png`;
-        link.href = dataUrl;
-        link.click();
-        toast.success("Image Saved!");
-        setImgLoading(false);
+    toast.promise(
+      toPng(cardRef.current, {
+        skipAutoScale: true,
+        cacheBust: true,
+        pixelRatio: 3,
       })
-      .catch((err) => {
-        toast.error(err.message);
-        setImgLoading(false);
-      });
+        .then((dataUrl) => {
+          const link = document.createElement("a");
+          link.download = `certificate_${value?.id}.png`;
+          link.href = dataUrl;
+          link.click();
+          toast.success("Image Saved!");
+          setImgLoading(false);
+        })
+        .catch((err) => {
+          toast.error(err.message);
+          setImgLoading(false);
+        }),
+      { loading: "Saving image...", success: "Saved image!", error: "Error!" }
+    );
   }, [cardRef, value?.id]);
 
   const handleSendEmail: FormEventHandler = useCallback(
@@ -68,43 +70,45 @@ export default function Cert() {
         return;
       }
 
-      toast.message("Sending email...");
       setImgLoading(true);
 
-      toPng(cardRef.current, {
-        skipAutoScale: true,
-        cacheBust: true,
-        pixelRatio: 1,
-      })
-        .then(async (imgUrl) => {
-          try {
-            const res = await fetch("/api/send-email", {
-              method: "POST",
-              headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                id: value?.id,
-                email: data.email,
-                imgUrl,
-                firstName: data?.firstName,
-                lastName: data?.lastName,
-              }),
-            });
+      toast.promise(
+        toPng(cardRef.current, {
+          skipAutoScale: true,
+          cacheBust: true,
+          pixelRatio: 1,
+        })
+          .then(async (imgUrl) => {
+            try {
+              const res = await fetch("/api/send-email", {
+                method: "POST",
+                headers: {
+                  Accept: "application/json",
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  id: value?.id,
+                  email: data.email,
+                  imgUrl,
+                  firstName: data?.firstName,
+                  lastName: data?.lastName,
+                }),
+              });
 
-            const resData = await res.json();
-            toast.success(resData.message);
-            setImgLoading(false);
-          } catch (err: any) {
+              const resData = await res.json();
+              toast.success(resData.message);
+              setImgLoading(false);
+            } catch (err: any) {
+              toast.error(err.message);
+              setImgLoading(false);
+            }
+          })
+          .catch((err) => {
             toast.error(err.message);
             setImgLoading(false);
-          }
-        })
-        .catch((err) => {
-          toast.error(err.message);
-          setImgLoading(false);
-        });
+          }),
+        { loading: "Sending email...", success: "Sent email!", error: "Error!" }
+      );
     },
     [cardRef, value?.id, data.email, data.firstName, data.lastName]
   );
@@ -117,7 +121,7 @@ export default function Cert() {
         height={1080}
         alt="Grid bg"
         priority
-        className="pointer-events-none object-cover absolute h-full top-0 left-0 text-center z-10 opacity-50 object-center w-full"
+        className="pointer-events-none object-cover absolute h-full top-0 left-0 text-center z-10 opacity-20 object-center w-full"
       />
 
       <form
