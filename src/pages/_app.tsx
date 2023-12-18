@@ -7,6 +7,8 @@ import type { AppProps } from "next/app";
 
 import "@/styles/globals.css";
 import Layout from "@/components/Layout";
+import SEO from "../../next-seo-config.js";
+import { DefaultSeo } from "next-seo";
 
 Router.events.on("routeChangeStart", () => {
   NProgress.configure({ showSpinner: false });
@@ -25,6 +27,7 @@ const googleReg = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Layout className={googleReg.className}>
+      <DefaultSeo {...SEO} />
       <Toaster />
       <Component {...pageProps} />
     </Layout>
