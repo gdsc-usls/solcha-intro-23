@@ -9,6 +9,7 @@ import Image from "next/image";
 
 import { db } from "@/config/firebase";
 import Modal from "@/components/Modal";
+import Footer from "@/components/Footer";
 
 const googleMedium = localFont({
   src: "../../public/fonts/Google-Sans-Medium.ttf",
@@ -62,7 +63,7 @@ export default function Home() {
   };
 
   return (
-    <section className="min-h-screen py-10 lg:py-20 relative font-google-reg">
+    <section className="min-h-screen pt-10 lg:pt-20 relative font-google-reg">
       <Modal
         title="In-app browser detected"
         description="To avoid running into issues, we recommend opening the certificate generator in an external browser."
@@ -128,6 +129,7 @@ export default function Home() {
           </form>
         </div>
       </div>
+      <Footer />
     </section>
   );
 }

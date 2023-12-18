@@ -14,6 +14,7 @@ import { db } from "@/config/firebase";
 import Button from "@/components/Button";
 import { Icons } from "@/components/Icons";
 import certImage from "@/images/certificate.png";
+import Footer from "@/components/Footer";
 
 const googleBold = localFont({
   src: "../../../public/fonts/Google-Sans-Bold.woff2",
@@ -146,7 +147,7 @@ export default function Cert() {
                 />
 
                 <h2
-                  className={`absolute z-10 sm:mt-12 lg:mt-11 mt-7 text-[#171717] [font-size:clamp(16px,3vw,36px)] uppercase ${googleBold.className}`}
+                  className={`absolute z-10 sm:mt-12 lg:mt-11 mt-6 text-[#171717] [font-size:clamp(16px,3vw,36px)] uppercase ${googleBold.className}`}
                 >
                   {data.firstName} {data.lastName}
                 </h2>
@@ -182,6 +183,7 @@ export default function Cert() {
             </div>
           </>
         )}
+        <Footer />
       </form>
     </div>
   );
