@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="z-40 mt-5 flex justify-center">
+    <footer className="z-40 my-5 flex justify-center relative">
       <div className="text-center bg-white/70 border border-white rounded-xl py-4 px-6">
         <p className="text-sm font-google-reg">
           Powered by{" "}
