@@ -73,7 +73,7 @@ export default function Home() {
       />
 
       <div className="glassmorph min-h-[80vh] z-30 relative w-[90%] px-7 md:w-3/4 lg:w-2/3 mx-auto">
-        <div className="gap-5 flex flex-col items-center py-28">
+        <div className="gap-5 flex flex-col items-center py-32">
           <Image
             src="/images/main-logo.svg"
             width={300}
@@ -83,7 +83,7 @@ export default function Home() {
             className="scale-[0.6] md:scale-75 xl:scale-100"
           />
 
-          <p className="text-center text-lg xl:text-2xl md:text-xl xl:mt-4 mb-14">
+          <p className="text-center text-base md:text-xl xl:mt-4 mb-14">
             An Introduction to Google Solutions Challenge.
           </p>
 
@@ -107,27 +107,29 @@ export default function Home() {
             </Button>
           </form>
         </div>
-        <p className="text-center text-base absolute bottom-10 left-0 right-0">
-          Follow us on GitHub! <br />
-          <a
-            href="https://github.com/hyamero"
-            className="text-blue-600"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            @hyamero{" "}
-          </a>
-          —
-          <a
-            href="https://github.com/joshxfi"
-            className="text-blue-600"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {" "}
-            @joshxfi
-          </a>
-        </p>
+        <div className="text-center absolute bottom-7 left-0 right-0">
+          <p className="text-center text-base  bg-white/70 border border-white rounded-xl p-4 inline-block">
+            Follow us on GitHub! <br />
+            <a
+              href="https://github.com/hyamero"
+              className="text-blue-600"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @hyamero{" "}
+            </a>
+            —
+            <a
+              href="https://github.com/joshxfi"
+              className="text-blue-600"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {" "}
+              @joshxfi
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );
