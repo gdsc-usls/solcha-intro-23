@@ -1,4 +1,4 @@
-import { FormEventHandler, useState } from "react";
+import { FormEventHandler, useEffect, useState } from "react";
 import { collection, getDocs, limit, query, where } from "firebase/firestore";
 import { useRouter } from "next/router";
 import localFont from "next/font/local";
@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import Image from "next/image";
 
 import { db } from "@/config/firebase";
+import Modal from "@/components/Modal";
 
 const googleMedium = localFont({
   src: "../../public/fonts/Google-Sans-Medium.ttf",
@@ -19,8 +20,16 @@ const googleMedium = localFont({
 export default function Home() {
   const { push } = useRouter();
 
+  const [warnModal, setWarnModal] = useState(false);
+
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (navigator.userAgent.match(/FBAN|FBAV/i)) {
+      setWarnModal(true);
+    }
+  }, []);
 
   const handleLocate: FormEventHandler = async (e) => {
     e.preventDefault();
@@ -54,6 +63,17 @@ export default function Home() {
 
   return (
     <section className="min-h-screen py-10 lg:py-20 relative font-google-reg">
+      <Modal
+        title="In-app browser detected"
+        description="To avoid running into issues, we recommend opening the certificate generator in an external browser."
+        isOpen={warnModal}
+        handleConfirm={{
+          text: "Understood",
+          fn: () => setWarnModal(false),
+        }}
+        onClose={() => null}
+      />
+
       <Image
         src="/images/stack1.png"
         width={500}
